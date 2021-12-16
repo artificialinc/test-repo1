@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.205.1/containers/python-3
+{
+	"name": "Artificial Action SDK",
+	"image": "ghcr.io/artificialinc/sdk_base_image:0.0.4",
+	"runArgs": [
+		"--network=host",
+		"--env-file", ".devcontainer/devcontainer.env"
+	],
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"python.defaultInterpreterPath": "python3",
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"zxh404.vscode-proto3",
+		"eamodio.gitlens",
+		"docmarty.open-tig",
+		"ms-vsliveshare.vsliveshare",
+		"/home/code/artificial-vscode-extension.vsix"
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "pipenv install --system --deploy",
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"features": {
+		"git": "latest"
+	},
+}
