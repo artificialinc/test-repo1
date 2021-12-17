@@ -8,9 +8,8 @@
 		"--env-file", ".devcontainer/devcontainer.env"
 	],
 	"mounts": [
-    "source=${localEnv:HOME}/.artificial,target=/home/code/.artificial,type=bind,consistency=cached"
-  ],
-
+    		"source=${localEnv:HOME}/.artificial,target=/home/code/.artificial,type=bind,consistency=cached"
+  	],
 	"settings": {
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.analysis.extraPaths": ["/home/code/.local/lib/python3.8/site-packages"],
