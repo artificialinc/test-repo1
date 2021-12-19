@@ -2,7 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.205.1/containers/python-3
 {
 	"name": "Artificial Action SDK",
-	"image": "ghcr.io/artificialinc/sdk_base_image:0.0.7",
+	"image": "ghcr.io/artificialinc/sdk_base_image:0.0.8",
 	"runArgs": [
         "--network=host",
 		"--env-file", ".devcontainer/devcontainer.env"
@@ -49,7 +49,7 @@
 		"ms-python.vscode-pylance",
 		"docmarty.open-tig",
 		"ms-vsliveshare.vsliveshare",
-		"/home/code/artificial-vscode-extension.vsix"
+		"artificial.artificial-vscode-extension"
 	],
 	"postAttachCommand": "pipenv install --system --deploy",
 	"features": {
