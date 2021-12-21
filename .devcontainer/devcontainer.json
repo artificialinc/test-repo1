@@ -39,9 +39,11 @@
 			"--disallow-untyped-defs"
 		],
 		"python.formatting.autopep8Path": "/home/code/.local/bin/autopep8",
+		"python.formatting.autopep8Args": ["--max-line-length=160"],
 		"python.formatting.blackPath": "/home/code/.local/bin/black",
 		"python.formatting.yapfPath": "/home/code/.local/bin/yapf",
 		"python.linting.pylintEnabled": false,
+		"python.envFile": "${workspaceFolder}/artificial.env",
 		"telemetry.enableCrashReporter": false
 	},
 	"extensions": [
