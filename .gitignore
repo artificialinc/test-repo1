@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 *.db
 *.db-journal
+
+#artificial 
+.artificial/bin
