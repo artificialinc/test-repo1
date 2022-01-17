@@ -49,6 +49,7 @@
 	"extensions": [
 		"ms-python.python",
 		"ms-python.vscode-pylance",
+		"eamodio.gitlens",
 		"docmarty.open-tig",
 		"ms-vsliveshare.vsliveshare",
 		"artificial.artificial-vscode-extension"
