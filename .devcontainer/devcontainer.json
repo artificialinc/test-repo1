@@ -4,57 +4,55 @@
 	"name": "Artificial Action SDK",
 	"image": "ghcr.io/artificialinc/sdk_base_image:0.0.11",
 	"runArgs": [
-        "--network=host",
-		"--env-file", ".devcontainer/devcontainer.env"
+		"--network=host",
+		"--env-file",
+		".devcontainer/devcontainer.env"
 	],
 	"mounts": [
-    		"source=${localEnv:HOME}/.artificial,target=/home/code/.artificial,type=bind,consistency=cached"
-  	],
+		"source=${localEnv:HOME}/.artificial,target=/home/code/.artificial,type=bind,consistency=cached"
+	],
 	"settings": {
 		"python.pythonPath": "/usr/local/bin/python",
-		"python.analysis.extraPaths": ["/home/code/.local/lib/python3.8/site-packages"],
+		"python.analysis.extraPaths": [
+			"/home/code/.local/lib/python3.8/site-packages"
+		],
+		"python.analysis.diagnosticSeverityOverrides": {
+			"reportUnboundVariable": "warning"
+		},
 		"python.testing.pytestEnabled": false,
 		"python.testing.unittestEnabled": true,
 		"python.testing.unittestArgs": [
 			"-v",
 			"-s",
-			"./test",
+			"./adapter",
 			"-p",
 			"test*.py"
 		],
-		"python.defaultInterpreterPath": "/usr/local/bin/python",		
+		"python.defaultInterpreterPath": "/usr/local/bin/python",
 		"python.languageServer": "Pylance",
 		"python.linting.enabled": true,
 		"python.linting.flake8Enabled": true,
 		"python.linting.flake8Path": "/home/code/.local/bin/flake8",
-		"python.linting.flake8Args": [ "--max-line-length=160" ],
 		"python.linting.flake8CategorySeverity.E": "Warning",
 		"python.linting.flake8CategorySeverity.F": "Warning",
 		"python.linting.mypyEnabled": true,
 		"python.linting.mypyPath": "/home/code/.local/bin/mypy",
-		"python.linting.mypyArgs": [
-			"--ignore-missing-imports",
-			"--follow-imports=silent",
-			"--show-column-numbers",
-			"--disallow-untyped-defs"
-		],
 		"python.formatting.autopep8Path": "/home/code/.local/bin/autopep8",
-		"python.formatting.autopep8Args": ["--max-line-length=160"],
+		"python.formatting.autopep8Args": [
+			"--max-line-length=160"
+		],
 		"python.formatting.blackPath": "/home/code/.local/bin/black",
 		"python.formatting.yapfPath": "/home/code/.local/bin/yapf",
 		"python.linting.pylintEnabled": false,
 		"python.envFile": "${workspaceFolder}/artificial.env",
-		"telemetry.enableCrashReporter": false
+		"telemetry.telemetryLevel": "off"
 	},
 	"extensions": [
 		"ms-python.python",
 		"ms-python.vscode-pylance",
-		"eamodio.gitlens",
-		"docmarty.open-tig",
-		"ms-vsliveshare.vsliveshare",
-		"artificial.artificial-vscode-extension"
+		"njpwerner.autodocstring"
 	],
-	"postAttachCommand": "pipenv install --system --deploy",
+	"postCreateCommand": "pipenv install --dev --system --deploy",
 	"features": {
 		"git": "latest"
 	}

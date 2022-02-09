@@ -132,3 +132,5 @@ dmypy.json
 
 #artificial 
 .artificial/bin
+*.bin
+.DS_Store
