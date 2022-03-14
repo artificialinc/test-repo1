@@ -14,9 +14,11 @@ COPY . /app/
 WORKDIR /app
 
 RUN pyright
+RUN yapf src -r --diff
 RUN flake8
 RUN mypy
-RUN python -m unittest discover -s adapter -v -b -f
+RUN isort src --check
+RUN pytest src
 RUN touch /force-preflight
 
 FROM reg.notartificial.xyz:1443/development/python-runtime:0.1.1 as base

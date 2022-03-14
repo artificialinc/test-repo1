@@ -2,5 +2,6 @@
   "include": [
     "adapter"
   ],
-  "exclude": []
+  "exclude": [],
+  "useLibraryCodeForTypes": true,
 }

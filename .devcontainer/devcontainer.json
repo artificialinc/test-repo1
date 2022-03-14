@@ -2,7 +2,7 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.205.1/containers/python-3
 {
 	"name": "Artificial Action SDK",
-	"image": "ghcr.io/artificialinc/sdk_base_image:0.0.11",
+	"image": "reg.notartificial.xyz:1443/aidan-sdk-image:0.1.0",
 	"runArgs": [
 		"--network=host",
 		"--env-file",
@@ -35,16 +35,22 @@
 		"python.linting.flake8Path": "/home/code/.local/bin/flake8",
 		"python.linting.flake8CategorySeverity.E": "Warning",
 		"python.linting.flake8CategorySeverity.F": "Warning",
+		"python.formatting.provider": "yapf",
 		"python.linting.mypyEnabled": true,
 		"python.linting.mypyPath": "/home/code/.local/bin/mypy",
-		"python.formatting.autopep8Path": "/home/code/.local/bin/autopep8",
-		"python.formatting.autopep8Args": [
-			"--max-line-length=160"
-		],
 		"python.formatting.blackPath": "/home/code/.local/bin/black",
 		"python.formatting.yapfPath": "/home/code/.local/bin/yapf",
 		"python.linting.pylintEnabled": false,
 		"python.envFile": "${workspaceFolder}/artificial.env",
+		"[python]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": true
+			}
+		},
+		"python.sortImports.args": [
+			"--settings-path",
+			"${workspaceFolder}/.isort.cfg"
+		],
 		"telemetry.telemetryLevel": "off"
 	},
 	"extensions": [

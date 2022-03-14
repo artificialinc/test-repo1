@@ -8,7 +8,7 @@
             "name": "Python: Run Adapter",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/adapter/example_adapter.py",
+            "program": "${workspaceFolder}/adapter/artificial_adapter.py",
             "console": "integratedTerminal",
             "justMyCode": false,
             "envFile": "${workspaceFolder}/artificial.env"
